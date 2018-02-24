@@ -5,16 +5,16 @@ module.exports = {
         filename: "bundle.js"
     },
     module: {
-        loaders: [{
+        rules: [{
                 test: /\.css$/,
-                loader: "style!css"
+                use: ["style-loader", "css-loader"]
             },
             {
                 test: /\.(js|jsc)$/,
                 loader: "babel-loader",
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2017', 'stage-0', 'react'],
+                    presets: ['es2015', 'stage-0', 'react'],
                     plugins: ['transform-runtime']
                 }
             }
